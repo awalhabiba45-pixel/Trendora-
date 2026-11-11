@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trendora helps you discover practical AI tools, technology guides and useful digital resources.">
+  <meta name="theme-color" content="#101d35">
+  <title>Trendora — Discover. Learn. Innovate.</title>
+  <style>
+    :root{--navy:#101d35;--blue:#557dff;--ink:#172238;--muted:#66738a;--line:#e7ebf2;--pale:#f5f7fc;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-size:1.45rem;font-weight:850;letter-spacing:.08em;color:var(--navy)}.brand span{color:var(--blue)}
+    nav{display:flex;gap:26px;color:#46536a;font-size:.94rem;font-weight:600}nav a:hover{color:var(--blue)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:white;padding:11px 18px;border-radius:10px;font-weight:700}
+    .hero{background:radial-gradient(circle at 82% 25%,#304b83 0,transparent 34%),linear-gradient(120deg,#101d35,#172c50);color:white;padding:92px 0 86px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:55px}
+    .eyebrow{display:inline-block;color:#b9cbff;background:#ffffff14;border:1px solid #ffffff24;padding:7px 12px;border-radius:999px;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    h1{font-size:clamp(2.7rem,6vw,4.7rem);line-height:1.06;letter-spacing:-.055em;margin:22px 0}
+    h1 em{font-style:normal;color:#91aaff}.hero p{font-size:1.12rem;color:#d5deee;max-width:600px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn-light{background:white;color:var(--navy)}.btn-outline{border:1px solid #ffffff66;color:white;padding:10px 17px;border-radius:10px;font-weight:700}
+    .visual{min-height:310px;position:relative;display:grid;place-items:center}
+    .orb{width:245px;height:245px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a9bcff,#557dff 42%,#243c78 72%);box-shadow:0 0 90px #557dff66;position:relative}
+    .orb:before,.orb:after{content:"";position:absolute;border:1px solid #ffffff55;border-radius:50%;inset:-28px;transform:rotate(-25deg) scaleY(.45)}
+    .orb:after{inset:-58px;transform:rotate(35deg) scaleY(.35)}
+    .float-card{position:absolute;background:#ffffffed;color:var(--navy);padding:13px 16px;border-radius:14px;box-shadow:0 18px 50px #0003;font-size:.88rem;font-weight:750}
+    .float-card small{display:block;color:var(--muted);font-weight:500}.fc1{top:26px;right:0}.fc2{bottom:24px;left:0}
+    section{padding:76px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
+    .kicker{color:var(--blue);font-size:.78rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+    h2{font-size:clamp(1.9rem,4vw,2.6rem);letter-spacing:-.04em;line-height:1.15;margin:8px 0}
+    .section-head p{color:var(--muted);max-width:470px;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{border:1px solid var(--line);border-radius:17px;padding:24px;background:white;transition:.2s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 15px 35px #18284a12;border-color:#cbd6ff}
+    .icon{width:46px;height:46px;border-radius:13px;background:#edf1ff;display:grid;place-items:center;font-size:1.35rem;margin-bottom:17px}
+    .card h3{margin:0 0 8px;font-size:1.12rem}.card p{margin:0;color:var(--muted);font-size:.94rem}
+    .latest{background:var(--pale)}.article{padding:0;overflow:hidden}.article-top{height:145px;background:linear-gradient(135deg,#192d50,#557dff);display:flex;align-items:center;justify-content:center;color:#fff;font-size:2.4rem}
+    .article:nth-child(2) .article-top{background:linear-gradient(135deg,#3b527b,#8da7e8)}.article:nth-child(3) .article-top{background:linear-gradient(135deg,#172c3d,#43a6a0)}
+    .article-body{padding:20px}.tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);font-weight:850}.article h3{margin:8px 0}.article p{font-size:.9rem}
+    .article a{display:inline-block;margin-top:12px;color:var(--blue);font-weight:750;font-size:.9rem}
+    .newsletter{background:#eef2ff;border:1px solid #dce4ff;border-radius:22px;padding:34px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .newsletter p{color:var(--muted);margin:5px 0 0}.newsletter form{display:flex;gap:8px;min-width:min(420px,100%)}
+    input{min-width:0;flex:1;padding:13px 14px;border:1px solid #d4dbea;border-radius:10px;font:inherit}
+    footer{background:var(--navy);color:#d9e2f3;padding:42px 0}.foot{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.foot p{color:#aebbd0;font-size:.9rem}.foot-links{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem}
+    .note{font-size:.78rem;color:#8793a7;margin-top:14px}
+    @media(max-width:760px){nav{display:none}.hero{padding:68px 0}.hero-grid{grid-template-columns:1fr;gap:10px}.visual{min-height:260px}.orb{width:190px;height:190px}.fc1{right:4%}.fc2{left:2%}.grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:10px}.newsletter{display:block}.newsletter form{margin-top:18px;min-width:0}.wrap{width:min(100% - 30px,1120px)}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">TRENDORA<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#explore">Explore</a><a href="#guides">AI Guides</a><a href="#latest">Latest</a><a href="#about">About</a>
+    </nav>
+    <a class="nav-cta" href="#explore">Explore topics</a>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Your guide to the digital world</span>
+        <h1>Discover what’s next. <em>Learn what matters.</em></h1>
+        <p>Explore practical AI tools, clear technology guides and useful digital resources — all in one place.</p>
+        <div class="hero-actions"><a class="btn btn-light" href="#latest">Explore the latest</a><a class="btn-outline" href="#explore">Browse topics</a></div>
+      </div>
+      <div class="visual" aria-hidden="true"><div class="orb"></div><div class="float-card fc1">✦ AI made clearer<small>Simple guides for everyone</small></div><div class="float-card fc2">⌘ Useful digital tools<small>Discover smarter ways to work</small></div></div>
+    </div>
+  </section>
+
+  <section id="explore">
+    <div class="wrap">
+      <div class="section-head"><div><span class="kicker">Explore Trendora</span><h2>Ideas for a smarter digital life</h2></div><p>Start with a topic, find a useful guide and put what you learn into practice.</p></div>
+      <div class="grid">
+        <article class="card"><div class="icon">✧</div><h3>AI Tools</h3><p>Discover AI websites and apps for writing, research, creativity and everyday tasks.</p></article>
+        <article class="card"><div class="icon">⌘</div><h3>Technology Guides</h3><p>Understand digital products, apps and technology with straightforward explanations.</p></article>
+        <article class="card"><div class="icon">⚡</div><h3>Free Online Tools</h3><p>Find helpful calculators, converters and other resources that make tasks easier.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="guides" class="latest">
+    <div class="wrap">
+      <div class="section-head"><div><span class="kicker">Learn something useful</span><h2>Guides to get you started</h2></div><p>These are starter article ideas. Replace them with researched, original posts before publishing.</p></div>
+      <div class="grid">
+        <article class="card"><div class="icon">✍️</div><h3>How to use AI for everyday writing</h3><p>A beginner-friendly guide to planning, drafting and improving your writing with AI.</p></article>
+        <article class="card"><div class="icon">🔎</div><h3>How to choose an AI tool</h3><p>What to compare: features, privacy, pricing, limitations and ease of use.</p></article>
+        <article class="card"><div class="icon">🧭</div><h3>Simple ways to stay safer online</h3><p>Practical basics for passwords, suspicious links, privacy settings and updates.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="latest">
+    <div class="wrap">
+      <div class="section-head"><div><span class="kicker">From the Trendora desk</span><h2>Featured reads</h2></div><p>Useful, easy-to-follow content for curious minds.</p></div>
+      <div class="grid">
+        <article class="card article"><div class="article-top">✦ AI</div><div class="article-body"><span class="tag">AI basics</span><h3>What is generative AI?</h3><p>A clear introduction to tools that can create text, images and other content.</p><a href="mailto:hello@yourdomain.com?subject=Trendora%20article%20enquiry">Read article →</a></div></article>
+        <article class="card article"><div class="article-top">⌘</div><div class="article-body"><span class="tag">Digital skills</span><h3>Five digital skills worth learning</h3><p>Explore practical skills that can help with study, creativity and work.</p><a href="mailto:hello@yourdomain.com?subject=Trendora%20article%20enquiry">Read article →</a></div></article>
+        <article class="card article"><div class="article-top">◎</div><div class="article-body"><span class="tag">Online safety</span><h3>Protecting your privacy online</h3><p>Understand a few important settings and habits for safer browsing.</p><a href="mailto:hello@yourdomain.com?subject=Trendora%20article%20enquiry">Read article →</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="newsletter">
+        <div><span class="kicker">Stay curious</span><h2>Make technology make sense.</h2><p>Trendora is being built to make useful digital knowledge easier to find and understand.</p></div>
+        <form onsubmit="event.preventDefault(); alert('Thanks! Connect this form to an email newsletter service before publishing.');"><input type="email" aria-label="Email address" placeholder="Your email address" required><button class="btn" type="submit" style="border:0;cursor:pointer">Join us</button></form>
+      </div>
+      <p class="note">The newsletter form is a visual demo and does not collect or store email addresses yet.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <div><a class="brand" href="#" style="color:#fff">TRENDORA<span>.</span></a><p>Discover. Learn. Innovate.</p></div>
+    <div class="foot-links"><a href="#explore">Explore</a><a href="#guides">Guides</a><a href="#about">About</a><a href="mailto:hello@yourdomain.com">Contact</a></div>
+  </div>
+  <div class="wrap note" style="color:#9eacc2">© 2026 Trendora. Replace placeholder contact details and add your own original articles before launch.</div>
+</footer>
+</body>
+</html>
